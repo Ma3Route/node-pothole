@@ -30,10 +30,12 @@ We shall call this time period, a *window*. So you provide *pothole* with
 definitions of your window's size (e.g. 5000 requests) and your
 window's length (e.g. 1 hour). You subsequently queue functions in it,
 as you go (or on-the-fly as the 'cool' kids call it). These
-functions will be executed immediately while ensuring you do not exceed
-the limit. Should the window be exhausted and no more functions can
-be executed without exceeding the set limit, *pothole* will 'sleep'
-and wait for the next window. (And then we are back in business...)
+functions will be executed immediately **if** the limit is **not** exceeded.
+Should the window be exhausted and no more functions can
+be executed without exceeding the set limit, *pothole* will 'sleep'.
+More functions are queued up till the current window expires, after which
+*pothole* 'wakes up' and starts executing them (in the order they were queued)
+and so on... You simply do **not** exceed that limit!
 
 [github]:https://github.com
 [github-rate-limits]:https://developer.github.com/v3/#rate-limiting
