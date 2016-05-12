@@ -1,0 +1,15 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 6,
+    },
+    "env": {
+        "node": true
+    },
+    "rules": {
+        "comma-dangle": [2, "always-multiline"],
+        "new-cap": [0],
+        "no-shadow": [2, { "hoist": "never" }],
+        "no-underscore-dangle": 0,
+        "no-use-before-define": [2, "nofunc"]
+    }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "pothole",
+  "version": "0.0.0",
+  "description": "Unknowingly respect their rate-limits",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Ma3Route/node-pothole.git"
+  },
+  "keywords": [
+    "rate-limit",
+    "pothole"
+  ],
+  "author": "GochoMugo (www.gmugo.in)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ma3Route/node-pothole/issues"
+  },
+  "homepage": "https://github.com/Ma3Route/node-pothole#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-eslint": "^18.1.0",
+    "grunt-mocha-test": "^0.12.7",
+    "load-grunt-tasks": "^3.5.0",
+    "mocha": "^2.4.5",
+    "should": "^8.3.1"
+  },
+  "dependencies": {
+    "debug": "^2.2.0",
+    "lodash": "^4.12.0"
+  }
+}

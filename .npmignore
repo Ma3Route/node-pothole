@@ -1,0 +1,20 @@
+# we want to keep our package as lean as possible
+# ALL those ignored in .gitignore apply here too
+
+# ignore our tests
+test/
+
+# ignore our editor configurations
+.editorconfig
+
+# ignore travis ci configuration
+.travis.yml
+
+# ignore Gruntfile
+Gruntfile.js
+
+# ignore eslint configurations
+.eslintrc
+
+# ignore the contribution file
+CONTRIBUTING.md
