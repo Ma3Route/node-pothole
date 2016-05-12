@@ -4,6 +4,11 @@
 >
 > :construction: **please consider this alpha-quality** :construction:
 
+[![Travis][travis-img]][travis]
+
+[travis]:https://travis-ci.org/Ma3Route/node-pothole
+[travis-img]:https://img.shields.io/travis/Ma3Route/node-pothole.svg?style=flat-square
+
 
 ## introduction:
 
@@ -59,7 +64,7 @@ const pothole = require('pothole');
 * [`pothole.Pothole`](#pothole)
 * [`pothole.PotholeMux`](#pothole-mux)
 
-You will mainly be interacting with **PotholeMux**, which multiplexes your
+You will mainly be interacting with `PotholeMux`, which multiplexes your
 functions for different APIs, etc. For this reason, the default export is
 a newly-constructed `PotholeMux` instance.
 
@@ -91,6 +96,8 @@ const mux = new pothole.PotholeMux();
 Adds a new pothole for a different API. This **must** be invoked before
 starting to queue up your functions.
 
+Throws an error if the corresponding `Pothole` is missing.
+
 Parameters:
 
 * `label` (String): identifies the pothole your are using
@@ -103,6 +110,8 @@ Returns `this` for chaining.
 
 Passes the function `func` to the corresponding pothole.
 
+Throws an error if the corresponding `Pothole` is missing.
+
 Parameters:
 
 * `label` (String): identifies the pothole you are using
@@ -113,13 +122,17 @@ Returns `this` for chaining.
 
 #### mux.stats(label)
 
-Returns stats for the corresponding pothole. See [p.stats()](#p-stats)
+Returns stats for the corresponding pothole. See [`p.stats()`](#p-stats)
 for more details.
+
+Throws an error if the corresponding `Pothole` is missing.
 
 
 #### mux.stop(label)
 
-Stops the corresponding pothole. See [p.stop()](#p-stop) for more details.
+Stops the corresponding pothole. See [`p.stop()`](#p-stop) for more details.
+
+Throws an error if the corresponding `Pothole` is missing.
 
 Returns `this` for chaining.
 
@@ -134,7 +147,7 @@ This is the low-level component handling much of the heavy lifting.
 <a name="p-constructor"></a>
 #### p = new Pothole(options)
 
-Returns a new *pothole* instance, if a valid window is defined.
+Returns a new `Pothole` instance, if a valid window is defined.
 Otherwise, throws an error.
 
 Parameters:
@@ -148,7 +161,9 @@ Parameters:
 <a name="p-enqueue"></a>
 #### p.enqueue(func)
 
-Add `func` to the queue.
+Add function `func` to the queue. The function is invoked immediately, if
+the queue is empty, we have *not* hit the limit and the instance has been
+started.
 
 Parameters:
 
@@ -180,7 +195,7 @@ For example,
 ```js
 {
     queue: {
-        "length": 293,
+        length: 293,
     },
     window: {
         size: 5000,
