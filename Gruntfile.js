@@ -1,3 +1,4 @@
+'use strict';
 /**
  * Grunt, The Javascript Task Runner
  */

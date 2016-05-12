@@ -1,3 +1,4 @@
+'use strict';
 // lib/pothole.js
 
 
