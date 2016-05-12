@@ -154,7 +154,7 @@ Parameters:
 
 Returns `this` so can do chaining.
 
-**Alias**: `pothole.start()`
+**Alias**: `pothole.add()`
 
 
 <a name="p-stats"></a>
@@ -184,7 +184,7 @@ For example,
         size: 5000,
         length: 3,
         remaining: 3475,
-        next": 1462982000463,
+        next: 1462982000463,
     }
 }
 ```
