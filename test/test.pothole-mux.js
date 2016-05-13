@@ -7,8 +7,8 @@ const should = require('should');
 
 
 // own modules
-const Pothole = require('../lib/pothole');
-const PotholeMux = require('../lib/pothole-mux');
+const Pothole = require('..').Pothole;
+const PotholeMux = require('..').PotholeMux;
 
 
 // module variables

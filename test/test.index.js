@@ -7,7 +7,7 @@ const should = require('should');
 
 
 // own modules
-const pothole = require('../lib/');
+const pothole = require('..');
 
 
 describe('exported module', function() {

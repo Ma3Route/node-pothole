@@ -7,7 +7,7 @@ const should = require('should');
 
 
 // own modules
-const Pothole = require('../lib/pothole');
+const Pothole = require('..').Pothole;
 
 
 // module variables
