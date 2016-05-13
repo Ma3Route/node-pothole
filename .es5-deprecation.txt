@@ -12,4 +12,5 @@ tasks below during the deprecation process:
     * `.npmignore`
     * `Gruntfile.js`
 * remove `.babelrc` file
+* remove support for the 0.x Node series in `.travis.yml`
 * remove this file entirely
