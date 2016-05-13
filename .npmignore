@@ -1,6 +1,13 @@
 # we want to keep our package as lean as possible
 # ALL those ignored in .gitignore apply here too
 
+# partial .gitignore
+*.log
+*.idea/
+*.iml
+.DS_Store
+coverage/
+
 # ignore our tests
 test/
 
@@ -18,3 +25,10 @@ Gruntfile.js
 
 # ignore the contribution file
 CONTRIBUTING.md
+
+# ES5: transpiled artefacts, etc.
+# Deprecation: remove the non-\n-interleaved lines below
+# ES5: Do not ignore the lib/ as it is the original source code.
+#      Distribute it with the package.
+.babelrc
+.test/

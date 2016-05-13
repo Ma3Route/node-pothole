@@ -14,3 +14,8 @@ node_modules/
 
 # coverage
 coverage/
+
+# ES5: transpiled output
+# Deprecation: remove these non-\n-interleaved lines below
+dist/
+.test/

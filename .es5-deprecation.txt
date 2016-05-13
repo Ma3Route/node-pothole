@@ -1,0 +1,15 @@
+# ES5 Deprecation
+
+Once we decide we want to move to ES6 entirely, complete the
+tasks below during the deprecation process:
+
+* in `package.json`, main should be changed from `dist/index.js` to
+  `lib/index.js`
+* remove the babel dev-dependencies in `package.json`
+* remove the unnecessary scripts in `package.json`
+* scan comments with `ES5: ` in the following files:
+    * `.gitignore`
+    * `.npmignore`
+    * `Gruntfile.js`
+* remove `.babelrc` file
+* remove this file entirely
