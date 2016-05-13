@@ -1,6 +1,6 @@
 {
   "name": "pothole",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Unknowingly respect their rate-limits",
   "main": "dist/index.js",
   "scripts": {
