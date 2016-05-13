@@ -76,6 +76,14 @@ a newly-constructed `PotholeMux` instance.
 This is the multiplexer, using multiple `Pothole`s internally. This allows you
 to use *pothole* with different APIs.
 
+* [`new pothole.PotholeMux()`](#mux-constructor)
+* [`mux.add()`](#mux-add)
+* [`mux.enqueue()`](#mux-enqueue)
+* [`mux.stats()`](#mux-stats)
+* [`mux.stop()`](#mux-stop)
+
+
+<a name="mux-constructor"></a>
 #### mux = new pothole.PotholeMux();
 
 *pothole* already exports a multiplexer, ready to use. Therefore, you can do:
@@ -91,12 +99,11 @@ const mux = new pothole.PotholeMux();
 ```
 
 
+<a name="mux-add"></a>
 #### mux.add(label, options);
 
 Adds a new pothole for a different API. This **must** be invoked before
 starting to queue up your functions.
-
-Throws an error if the corresponding `Pothole` is missing.
 
 Parameters:
 
@@ -106,6 +113,7 @@ Parameters:
 Returns `this` for chaining.
 
 
+<a name="mux-enqueue"></a>
 #### mux.enqueue(label, func)
 
 Passes the function `func` to the corresponding pothole.
@@ -120,6 +128,7 @@ Parameters:
 Returns `this` for chaining.
 
 
+<a name="mux-stats"></a>
 #### mux.stats(label)
 
 Returns stats for the corresponding pothole. See [`p.stats()`](#p-stats)
@@ -128,6 +137,7 @@ for more details.
 Throws an error if the corresponding `Pothole` is missing.
 
 
+<a name="mux-stop"></a>
 #### mux.stop(label)
 
 Stops the corresponding pothole. See [`p.stop()`](#p-stop) for more details.
@@ -143,9 +153,15 @@ Returns `this` for chaining.
 
 This is the low-level component handling much of the heavy lifting.
 
+* [`new pothole.Pothole()`](#p-constructor)
+* [`p.start`](#p-start)
+* [`p.enqueue()`](#p-enqueue)
+* [`p.stats()`](#p-stats)
+* [`p.stop()`](#p-stop)
+
 
 <a name="p-constructor"></a>
-#### p = new Pothole(options)
+#### p = new pothole.Pothole(options)
 
 Returns a new `Pothole` instance, if a valid window is defined.
 Otherwise, throws an error.
@@ -155,7 +171,17 @@ Parameters:
 * `options` (Object):
     * `window` (Object): the window definition
         * `size` (Number): number of requests
-        * `length` (Number): length of time in window
+        * `length` (Number): length of time in window, in milliseconds
+
+
+<a name="p-start"></a>
+#### p.start()
+
+Start handling functions now.
+
+Returns `this` for chaining.
+
+Alias: `pothole.sink()`
 
 
 <a name="p-enqueue"></a>
@@ -185,7 +211,7 @@ Returns:
     * `length` (Number): number of functions still in queue
 * `window` (Object):
     * `size` (Number): number of requests allowed in a window
-    * `length` (Number): time period of the window
+    * `length` (Number): time period of the window, in milliseconds
     * `remaining` (Number): number of requests remaining, in the current
     window, before hitting limit
     * `next` (Number): start of next window, in UNIX time
@@ -205,15 +231,6 @@ For example,
     }
 }
 ```
-
-
-#### p.start()
-
-Start handling functions now.
-
-Returns `this` for chaining.
-
-Alias: `pothole.sink()`
 
 
 <a name="p-stop"></a>
