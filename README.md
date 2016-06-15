@@ -12,6 +12,12 @@
 
 ## introduction:
 
+I wrote a [blog post, titled 'Pothole, an API rate-limit respecting approach'][blog-post].
+You should read it through as it discusses the niche this package fills.
+**TL;DR** Here's a shorter overview:
+
+[blog-post]:http://blog.forfuture.co.ke/posts/001
+
 It is probably **not** a great idea to use this module, and here's why:
 
 1. you should strive to **reduce** the number of API hits you do (that must be
